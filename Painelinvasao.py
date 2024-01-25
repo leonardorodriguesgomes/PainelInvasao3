@@ -116,11 +116,23 @@ filtrado = filtrado2
 if st.sidebar.button('Iniciar'):
    principal()
 
-if st.sidebar.button('Exemplo km 40'):
+if st.sidebar.button('Exemplo km 42'):
     st.subheader('Video Arquivo SketchUp km 42')
     video_file = open('km 42.mp4','rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
+    with open('km 42.mp4','rb') as file:
+        btn = st.download_button(
+            label = "Download video",
+            data = file,
+            file_name= 'km 42.mp4'
+        )
+    with open('km 42.skp','rb') as file:
+        bt = st.download_button(
+            label = "Download Arquivo SketchUp",
+            data = file,
+            file_name= 'km 42.skp'
+        )
 
 
 
